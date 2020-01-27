@@ -8,6 +8,14 @@ This is a starter template for Aurelia with Electron. It does include:
 
 Below you can find instructions on how to build, test and run the project.
 
+## Structure
+
+The folder `src` contains the frontend (renderer process), which is a standard Aurelia CLI app. The folder `backend` on the other hand represents the main process of Electron.
+Once built, the output of the frontend is as usual the `scripts` folder, whereas the backend is `dist/<name-of-app>/backend`. If you intend to package the app, it might be better
+to move the frontend output to `dist/frontend` as well so that all sources are at a single location.
+
+If you change the `name` inside the `package.json` make sure to adjust the `main` property as well as the `electron` npm script to reflect the new name
+
 ## How to develop?
 
 Start with installing all npm dependencies via `npm install`.
