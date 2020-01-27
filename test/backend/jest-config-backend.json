@@ -1,0 +1,36 @@
+{
+  "rootDir": "../../",
+  "modulePaths": [
+    "<rootDir>/backend",
+    "<rootDir>/node_modules"
+  ],
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "transform": {
+    "^.+\\.ts$": "ts-jest"
+  },
+  "setupFiles": [
+    "<rootDir>/test/backend/jest-pretest.ts"
+  ],
+  "testMatch": [
+    "<rootDir>/test/backend/unit/**/*.spec.ts"
+  ],
+  "testEnvironment": "node",
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "backend/**/*.{js,ts}",
+    "!**/*.spec.{js,ts}",
+    "!**/node_modules/**",
+    "!**/test/backend/unit/**"
+  ],
+  "coverageDirectory": "<rootDir>/test/backend/coverage-jest",
+  "coverageReporters": [
+    "json",
+    "lcov",
+    "text",
+    "html"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "extends": "stylelint-config-recommended-scss",
+  "plugins": [
+		"stylelint-order"
+	],
+  "rules": {
+    "max-nesting-depth": 3,
+    "selector-max-combinators": 0,
+    "selector-max-specificity": [
+      "0,1,0",
+      {
+        "ignoreSelectors": [
+          ":visited",
+          ":active",
+          ":hover",
+          ":enabled",
+          ":disabled",
+          ":focus",
+          ":focus-within",
+          ":read-only",
+          ":after",
+          "::after",
+          ":before",
+          ":checked",
+          ":indeterminate",
+          "::-webkit-input-placeholder",
+          "::-webkit-search-cancel-button",
+          "::-webkit-scrollbar",
+          "::-webkit-scrollbar-corner",
+          "::-webkit-scrollbar-thumb",
+          "::-webkit-inner-spin-button"
+        ]
+      }
+    ],
+    "order/order": [
+      "custom-properties",
+			"declarations"
+    ],
+    "order/properties-alphabetical-order": true,
+    "declaration-no-important": true,
+    "no-descending-specificity": null,
+    "selector-max-attribute": 0,
+    "selector-max-type": 0,
+    "selector-max-id": 0,
+    "selector-type-no-unknown": null,
+    "selector-max-universal": 0,
+    "color-named": [
+      "never",
+      {
+        "message": "Use SCSS variables instead of a bespoke color."
+      }
+    ],
+    "color-no-hex": [true,
+      {
+        "message": "Use SCSS variables instead of a hex color."
+      }
+    ]
+  }
+}

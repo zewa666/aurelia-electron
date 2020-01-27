@@ -1,0 +1,32 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "sourceRoot": "../backend",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "stripInternal": true,
+    "declaration": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "outDir": "./dist/backend",
+    "lib": ["es6", "es7", "dom", "dom.iterable", "scripthost", "es2017.object"],
+    "paths": {
+      "*": ["./custom_typings/*", "*"]
+    },
+    "baseUrl": "./",
+    "skipLibCheck": true,
+    "rootDir": "../"
+  },
+  "include": [
+    "./backend/**/*.ts",
+    "./custom_typings/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

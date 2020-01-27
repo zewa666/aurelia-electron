@@ -1,0 +1,60 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-defocus",
+    "typestrict"
+  ],
+  "rulesDirectory": [
+    "./node_modules/tslint-microsoft-contrib",
+    "./node_modules/tslint-defocus/dist"
+  ],
+  "rules": {
+    "interface-name": false,
+    "trailing-comma": false,
+    "variable-name": [
+      true,
+      "allow-leading-underscore"
+    ],
+    "no-any": true,
+    "no-unused-variable": true,
+    "max-classes-per-file": false,
+    "member-ordering": [
+      true,
+      {
+        "order": "fields-first"
+      }
+    ],
+    "interface-over-type-literal": false,
+    "whitespace": [true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-module",
+      "check-separator",
+      "check-rest-spread",
+      "check-type",
+      "check-type-operator",
+      "check-preblock"
+    ],
+    "await-promise": [true, "Client", "jest"],
+    "mocha-avoid-only": true,
+    "defocus": true,
+    "no-collapsible-if": true,
+    "no-array-delete": true,
+    "no-duplicate-in-composite": true,
+    "no-case-with-or": true,
+    "no-ignored-return": true,
+    "no-useless-cast": false,
+    "no-redundant-parentheses": true,
+    "no-accessor-field-mismatch": false,
+    "prefer-promise-shorthand": true,
+    "consecutive-overloads": true,
+    "cognitive-complexity":  [false, 20],
+    "space-before-function-paren": [true, {
+      "method": "never",
+      "named": "never",
+      "anonymous": "never"
+    }],
+    "restrict-plus-operands": false
+  }
+}
