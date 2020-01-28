@@ -28,7 +28,8 @@ Tests can be executed with:
 * `npm run test-frontend` runs renderer process tests and generates coverage in test/frontend/coverage-jest
 * `npm run tdd-backend` runs continuous main process tests
 * `npm run tdd-frontend` runs continuous renderer process tests
-* `npm run test` runs all tests (backend/frontend) at once with coverage outputs
+* `npm run test-e2e` runs spectron e2e tests
+* `npm run test` runs all unit tests (backend/frontend) at once with coverage outputs
 
 ## Hooks
 
@@ -37,7 +38,7 @@ Before any push happens, a pre-push hook (Husky) will run all linters and tests 
 ## NodeIntegration in Renderer
 
 This sample makes use of NodeIntegration in the Render process to show how to distinguish Electron's require from the AMD one.
-Typically you'd want to avoid the integration if not needed. In order to turn it of comment out this section of the `main.ts` file
+Typically you'd want to avoid the integration if not needed. In order to turn it off, comment out this section of the `main.ts` file
 
 ```typescript
 webPreferences: {

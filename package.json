@@ -20,6 +20,7 @@
     "test-backend": "npm run clear-jest-cache && cross-env NODE_ENV=test-backend jest --config test/backend/jest-config-backend.json --coverage",
     "tdd-frontend": "cross-env NODE_ENV=development jest --config test/frontend/jest-config-frontend.json --watch",
     "tdd-backend": "cross-env NODE_ENV=test-backend jest --config test/backend/jest-config-backend.json --watch",
+    "test-e2e": "npm run build && npm run clear-jest-cache && cross-env NODE_ENV=development jest --config test/e2e/jest-config-e2e.json",
     "test": "npm run test-frontend && npm run test-backend",
     "build-backend": "au electron",
     "electron": "npm run build-backend && cross-env-shell NODE_ENV=development electron dist/aurelia-electron/backend/main.js"
@@ -40,6 +41,7 @@
   "devDependencies": {
     "@types/jest": "^23.3.5",
     "@types/node": "^10.11.6",
+    "@types/webdriverio": "^4.8.7",
     "aurelia-cli": "^1.0.0-beta.13",
     "aurelia-loader-nodejs": "^1.0.1",
     "aurelia-pal-nodejs": "^1.1.1",
@@ -72,6 +74,7 @@
     "merge2": "^1.2.3",
     "minimatch": "^3.0.4",
     "plugin-error": "^1.0.1",
+    "spectron": "^9.0.0",
     "stylelint": "^13.0.0",
     "stylelint-config-recommended-scss": "^4.1.0",
     "stylelint-order": "^4.0.0",
