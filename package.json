@@ -3,8 +3,13 @@
   "description": "A starter template for Aurelia with Electron",
   "version": "0.1.0",
   "repository": {
-    "type": "???",
-    "url": "???"
+    "type": "git",
+    "url": "https://github.com/zewa666/aurelia-electron.git"
+  },
+  "author": {
+    "email": "zewa666@gmail.com",
+    "name": "Vildan Softic",
+    "url": "https://pragmatic-coder.net"
   },
   "scripts": {
     "start": "cross-env ECON=true au run --watch --env",
