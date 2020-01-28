@@ -27,9 +27,10 @@ export function createWindow() {
 
   mainWindow.maximize();
 
-  const client = require("electron-connect").client;
-  client.create(mainWindow);
-}
+  if (process.env.ECON === "true") {
+    const client = require("electron-connect").client;
+    client.create(mainWindow);
+  }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

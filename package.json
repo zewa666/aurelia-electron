@@ -7,7 +7,7 @@
     "url": "???"
   },
   "scripts": {
-    "start": "au run --watch",
+    "start": "cross-env ECON=true au run --watch --env",
     "lint": "au lint",
     "build": "au build",
     "clear-jest-cache": "jest --clearCache",
