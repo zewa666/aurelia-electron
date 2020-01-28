@@ -10,6 +10,7 @@
       "0,1,0",
       {
         "ignoreSelectors": [
+          "body",
           ":visited",
           ":active",
           ":hover",
@@ -40,7 +41,9 @@
     "declaration-no-important": true,
     "no-descending-specificity": null,
     "selector-max-attribute": 0,
-    "selector-max-type": 0,
+    "selector-max-type": [0, {
+      "ignoreTypes": ["body"]
+    }],
     "selector-max-id": 0,
     "selector-type-no-unknown": null,
     "selector-max-universal": 0,

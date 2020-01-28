@@ -1,3 +1,21 @@
+$dt-colors: (
+  title-fg: white  
+);
+
+$lt-colors: (
+  title-fg: black  
+);
+
+body {
+  @media (prefers-color-scheme: dark) {
+    color: map-get($dt-colors, title-fg);
+  }
+
+  @media (prefers-color-scheme: light) {
+    color: map-get($lt-colors, title-fg);
+  }
+}
+
 .app {
   &__title {
     font-size: 30px;
