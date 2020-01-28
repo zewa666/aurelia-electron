@@ -27,7 +27,6 @@
   "license": "MIT",
   "main": "dist/aurelia-electron/backend/main.js",
   "dependencies": {
-    "appium": "^1.16.0",
     "aurelia-bootstrapper": "^2.3.0",
     "requirejs": "^2.3.6",
     "text": "github:requirejs/text#latest"
