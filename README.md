@@ -33,3 +33,17 @@ Tests can be executed with:
 ## Hooks
 
 Before any push happens, a pre-push hook (Husky) will run all linters and tests to ensure no faulty code is pushed to the remote repository.
+
+## NodeIntegration in Renderer
+
+This sample makes use of NodeIntegration in the Render process to show how to distinguish Electron's require from the AMD one.
+Typically you'd want to avoid the integration if not needed. In order to turn it of comment out this section of the `main.ts` file
+
+```typescript
+webPreferences: {
+  nodeIntegration: true
+},
+```
+
+If needed though, you can access electrons require method later in your renderer via `window.nodeRequire` as it's patched in the `index.html`.
+Furthermore you'll notice a `window.electronRequire` which is needed for Spectron tests to access underlying processes during tests
