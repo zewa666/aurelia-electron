@@ -15,6 +15,7 @@
     "start": "cross-env ECON=true au run --watch --env",
     "lint": "au lint",
     "build": "au build",
+    "build-backend": "au electron",
     "clear-jest-cache": "jest --clearCache",
     "test-frontend": "au build && npm run clear-jest-cache && cross-env NODE_ENV=development jest --config test/frontend/jest-config-frontend.json --coverage",
     "test-backend": "npm run clear-jest-cache && cross-env NODE_ENV=test-backend jest --config test/backend/jest-config-backend.json --coverage",
@@ -22,12 +23,27 @@
     "tdd-backend": "cross-env NODE_ENV=test-backend jest --config test/backend/jest-config-backend.json --watch",
     "test-e2e": "npm run build && npm run clear-jest-cache && cross-env NODE_ENV=development jest --config test/e2e/jest-config-e2e.json",
     "test": "npm run test-frontend && npm run test-backend",
-    "build-backend": "au electron",
-    "electron": "npm run build-backend && cross-env-shell NODE_ENV=development electron dist/aurelia-electron/backend/main.js"
+    "electron": "npm run build-backend && cross-env-shell NODE_ENV=development electron dist/aurelia-electron/backend/main.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "husky": {
     "hooks": {
       "pre-push": "npm run lint && npm run test"
+    }
+  },
+  "build": {
+    "appId": "au.electron.demo",
+    "artifactName": "${name}-setup-${version}.${ext}",
+    "files": [
+      "dist/**/*",
+      "scripts/**/*",
+      "package.json",
+      "index.html"
+    ],
+    "mac": {
+      "category": "your.app.category.type",
+      "icon": "build/assets/app-icon.icns"
     }
   },
   "license": "MIT",
@@ -52,6 +68,7 @@
     "cross-env": "^6.0.3",
     "debounce": "^1.2.0",
     "electron": "^7.1.10",
+    "electron-builder": "^22.3.2",
     "electron-connect": "^0.6.3",
     "event-stream": "^4.0.1",
     "gulp": "^4.0.0",
