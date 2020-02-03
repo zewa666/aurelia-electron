@@ -25,7 +25,8 @@
     "test": "npm run test-frontend && npm run test-backend",
     "electron": "npm run build-backend && cross-env-shell NODE_ENV=development electron dist/aurelia-electron/backend/main.js",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "dist-all": "electron-builder -mwl"
   },
   "husky": {
     "hooks": {
@@ -44,6 +45,13 @@
     "mac": {
       "category": "your.app.category.type",
       "icon": "build/assets/app-icon.icns"
+    },
+    "linux": {
+      "icon": "build/assets",
+      "category": "Development"
+    },
+    "win": {
+      "icon": "build/assets/app-icon.ico"
     }
   },
   "license": "MIT",

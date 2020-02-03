@@ -31,6 +31,16 @@ Tests can be executed with:
 * `npm run test-e2e` runs spectron e2e tests
 * `npm run test` runs all unit tests (backend/frontend) at once with coverage outputs
 
+## Building a binary release
+
+To produce a binary with electron-builder, simply run `npm run dist`, which will create the output inside the `dist` folder.
+
+> Notice that when running above command, you'll only build for the specific target you're on. So Mac will build for Mac, while Linux and Win will build respectively for their targets.
+
+If you want to build for multiple targets, e.g on Mac you can build for Linux, Mac and Windows, just run `npm run dist-all`.
+
+For further information about options please consult the [electron builder docs](https://www.electron.build/)
+
 ## Hooks
 
 Before any push happens, a pre-push hook (Husky) will run all linters and tests to ensure no faulty code is pushed to the remote repository.
