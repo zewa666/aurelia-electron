@@ -9,6 +9,7 @@ export function createWindow() {
   mainWindow = new BrowserWindow({
     height: 600,
     webPreferences: {
+      plugins: true,
       nodeIntegration: true
     },
     width: 800,
@@ -59,3 +60,11 @@ app.on("activate", () => {
     createWindow();
   }
 });
+
+const pathToPepFlashPlayer = process.env.NODE_ENV === "development"
+  ? path.join(__dirname, "../../../")
+  : path.dirname(app.getPath("exe"));
+const pepPlayerFullPath = path.join(pathToPepFlashPlayer, "build/assets", 'pepflashplayer.dll');
+ 
+app.commandLine.appendSwitch('ppapi-flash-path', pepPlayerFullPath);
+app.commandLine.appendSwitch('ppapi-flash-version', '18.0.0.203');
