@@ -12,7 +12,7 @@
     "url": "https://pragmatic-coder.net"
   },
   "scripts": {
-    "start": "cross-env ECON=true au run --watch --env",
+    "start": "cross-env ECON=true cross-env NODE_ENV=development au run --watch --env",
     "lint": "au lint",
     "build": "au build",
     "build-backend": "au electron",
@@ -36,6 +36,10 @@
   "build": {
     "appId": "au.electron.demo",
     "artifactName": "${name}-setup-${version}.${ext}",
+    "extraFiles": [
+      "build/assets/flashdemo.swf",
+      "build/assets/pepflashplayer.dll"
+    ],
     "files": [
       "dist/**/*",
       "scripts/**/*",
