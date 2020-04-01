@@ -64,7 +64,7 @@ app.on("activate", () => {
 const pathToPepFlashPlayer = process.env.NODE_ENV === "development"
   ? path.join(__dirname, "../../../")
   : path.dirname(app.getPath("exe"));
-const pepPlayerFullPath = path.join(pathToPepFlashPlayer, "build/assets", 'pepflashplayer.dll');
- 
-app.commandLine.appendSwitch('ppapi-flash-path', pepPlayerFullPath);
-app.commandLine.appendSwitch('ppapi-flash-version', '18.0.0.203');
+const pepPlayerFullPath = path.join(pathToPepFlashPlayer, "build/assets", "pepflashplayer.dll");
+
+app.commandLine.appendSwitch("ppapi-flash-path", pepPlayerFullPath);
+app.commandLine.appendSwitch("ppapi-flash-version", "18.0.0.203");

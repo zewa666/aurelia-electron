@@ -13,11 +13,15 @@ jest.mock("electron", () => {
       public maximize = () => { /**/ };
     },
     app: {
+      commandLine: {
+        appendSwitch: () => { /**/ }
+      },
       // tslint:disable-next-line:no-any
       emit: (event: string) => { (global as any).onSubscription[event](); },
+      getPath: () => "",
       // tslint:disable-next-line:no-any
       on: (event: string, callback: () => any) => { (global as any).onSubscription[event] = callback; },
-      quit: () => { /**/ },
+      quit: () => { /**/ }
     }
   };
 });
