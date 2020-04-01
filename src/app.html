@@ -1,6 +1,11 @@
 <template class="app">
   <require from="./app.css"></require>
 
-  <h1 class="app__title"
-      data-aid="welcome-title">${message}</h1>
+  <h1 class="app__title" data-aid="welcome-title">${message}</h1>
+
+  <object width="100%" height="500">
+    <param name="movie" value.bind="flashdemo">
+    <embed src.bind="flashdemo" width="100%" height="500">
+    </embed>
+  </object>
 </template>
